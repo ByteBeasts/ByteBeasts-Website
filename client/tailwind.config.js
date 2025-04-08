@@ -18,6 +18,15 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          100: "#D1093D", // Lighter shade for gradient start
+          200: "#C00433",
+          300: "#AB0A2E",
+          400: "#950124", // Primary brand color
+          500: "#850020",
+          600: "#75001C",
+          700: "#650018",
+          800: "#550013",
+          900: "#45000F",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -43,6 +52,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: {
+          primary: "#950124",
+          secondary: "#1C1C1C",
+          light: "#D1093D",
+          dark: "#85002A",
+        },
+      },
+      fontFamily: {
+        kallisto: ["Kallisto", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

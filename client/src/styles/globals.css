@@ -4,33 +4,33 @@
  
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 0 0% 11%; /* #1C1C1C */
     --foreground: 0 0% 98%;
     
-    --card: 240 10% 3.9%;
+    --card: 0 0% 11%; /* #1C1C1C */
     --card-foreground: 0 0% 98%;
     
-    --popover: 240 10% 3.9%;
+    --popover: 0 0% 11%; /* #1C1C1C */
     --popover-foreground: 0 0% 98%;
     
-    --primary: 270 95% 75%;
+    --primary: 348 99% 29%; /* #950124 */
     --primary-foreground: 0 0% 98%;
     
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 0 0% 11%; /* #1C1C1C */
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
     
-    --accent: 240 3.7% 15.9%;
+    --accent: 348 99% 29%; /* #950124 */
     --accent-foreground: 0 0% 98%;
     
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 100% 41%; /* #D1093D */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 348 99% 29%; /* #950124 */
     
     --radius: 0.5rem;
   }
@@ -46,18 +46,44 @@
   }
 }
 
-/* Custom cyberpunk/neon styling */
+/* Custom neon styling with new brand colors */
 @layer components {
   .neon-glow {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 
                 0 0 10px rgba(255, 255, 255, 0.5), 
-                0 0 15px rgba(138, 43, 226, 0.5), 
-                0 0 20px rgba(138, 43, 226, 0.5);
+                0 0 15px rgba(149, 1, 36, 0.5), 
+                0 0 20px rgba(149, 1, 36, 0.5);
   }
   
   .neon-border {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 
-               0 0 10px rgba(138, 43, 226, 0.5), 
-               0 0 15px rgba(138, 43, 226, 0.3);
+               0 0 10px rgba(149, 1, 36, 0.5), 
+               0 0 15px rgba(149, 1, 36, 0.3);
+  }
+}
+
+/* Custom typography */
+@layer base {
+  @font-face {
+    font-family: 'Kallisto';
+    src: url('./assets/fonts/Kallisto-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+  font-family: 'Kallisto';
+  src: url('./assets/fonts/Kallisto-Bold.otf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kallisto', sans-serif;
+  }
+
+  body, p, span, button, input, textarea, select, li {
+    font-family: 'Montserrat', sans-serif;
   }
 }
