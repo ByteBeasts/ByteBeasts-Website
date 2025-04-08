@@ -8,21 +8,21 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <img src="/logo.png" alt="Logo" width={180} height={40} className="h-10 w-auto" />
         </div>
-        <nav className="hidden md:flex items-center gap-8">
-          <Link to="#about" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+        <nav className="hidden md:flex items-center gap-8 font-montserrat">
+          <Link to="#about" className="text-foreground hover:text-primary transition-colors">
             About
           </Link>
-          <Link to="#games" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+          <Link to="#games" className="text-foreground hover:text-primary transition-colors">
             Games
           </Link>
-          <Link to="#team" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+          <Link to="#team" className="text-foreground hover:text-primary transition-colors">
             Team
           </Link>
-          <Link to="#community" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+          <Link to="#community" className="text-foreground hover:text-primary transition-colors">
             Community
           </Link>
         </nav>
-        <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-none">
+        <Button className="bg-gradient-to-r from-brand-light to-brand-dark hover:opacity-90 text-white font-kallisto">
           Play Now
         </Button>
       </div>
