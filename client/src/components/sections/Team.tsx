@@ -54,12 +54,13 @@ const teamMembers: TeamMember[] = [
 
 const Team = () => {
   return (
-    <section id="team" className="py-20 bg-[#1C1C1C]/50 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 to-blue-900/10 z-0"></div>
+    <section id="team" className="py-20 bg-secondary relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet Our Team</h2>
-          <p className="text-[#FFF6F0]/80 text-lg">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-foreground">
+            Meet Our Team
+          </h2>
+          <p className="text-lg text-foreground/80 font-montserrat">
             The talented individuals behind ByteBeasts, bringing together expertise in gaming, blockchain, and art.
           </p>
         </div>
@@ -71,6 +72,7 @@ const Team = () => {
         </div>
       </div>
     </section>
+
   );
 };
 

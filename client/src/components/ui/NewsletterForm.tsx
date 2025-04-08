@@ -2,15 +2,15 @@ import { Button } from "./Button";
 
 const NewsletterForm = () => {
   return (
-    <form className="space-y-4">
+    <form className="space-y-4 font-montserrat">
       <div>
         <input
           type="email"
           placeholder="Enter your email"
-          className="w-full px-4 py-3 bg-[#1C1C1C] border border-[#FFF6F0]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-light focus:border-transparent text-foreground placeholder:text-muted-foreground"
         />
       </div>
-      <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-none">
+      <Button variant="gradient" className="w-full">
         Subscribe
       </Button>
     </form>

@@ -7,30 +7,31 @@ const games = [
     title: "CryptoTamers",
     description: "Collect and nurture digital beasts",
     image: "/game1.png",
-    gradientFrom: "purple-600",
-    gradientTo: "pink-600",
+    gradientFrom: "from-brand-light",
+    gradientTo: "to-brand-dark",
   },
   {
     id: "beastarena",
     title: "Beast Arena",
     description: "Strategic PvP battles with your beasts",
     image: "/game2.png",
-    gradientFrom: "blue-600",
-    gradientTo: "cyan-600",
+    gradientFrom: "from-brand-light",
+    gradientTo: "to-brand-dark",
   },
   {
     id: "beastexplorers",
     title: "Beast Explorers",
     description: "Open world adventure with your beasts",
     image: "/game3.png",
-    gradientFrom: "pink-600",
-    gradientTo: "orange-600",
+    gradientFrom: "from-brand-light",
+    gradientTo: "to-brand-dark",
   },
 ];
 
+
 const Games = () => {
   return (
-    <section id="games" className="py-20">
+    <section id="games" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Games Launched</h2>
@@ -47,7 +48,7 @@ const Games = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-none px-8">
+          <Button variant="gradient" className="px-8">
             View All Games
           </Button>
         </div>

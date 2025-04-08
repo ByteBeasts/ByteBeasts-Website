@@ -9,13 +9,13 @@ const announcement: AnnouncementData = {
     "Get ready for our newest adventure in the ByteBeasts universe. ODBOOST combines strategic gameplay with unique collectible beasts in an immersive on-chain experience.",
   ctaText: "Join Waitlist",
   ctaLink: "#", 
-  gradientFrom: "purple-600",
-  gradientTo: "pink-600",
+  gradientFrom: "from-brand-light",
+  gradientTo: "to-brand-dark",
 };
 
 const Announcement = () => {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 bg-secondary relative overflow-hidden">
       <div className="container mx-auto px-4">
         <AnnouncementCard {...announcement} />
       </div>

@@ -3,12 +3,14 @@ import FeatureCard from "../ui/FeatureCard";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-[#1C1C1C]/50 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/10 z-0"></div>
+    <section id="about" className="py-20 bg-secondary relative">
+      <div className="absolute inset-0 z-0"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">About ByteBeasts</h2>
-          <p className="text-[#FFF6F0]/80 text-lg">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-foreground">
+            About ByteBeasts
+          </h2>
+          <p className="text-foreground/80 text-lg font-montserrat">
             ByteBeasts represents the convergence of tradition and innovation: a universe where the nostalgia of
             monster-taming meets the cutting edge of blockchain technology.
           </p>
@@ -19,8 +21,8 @@ const About = () => {
             icon={<Globe className="h-8 w-8 text-white" />}
             title="Interconnected Universe"
             description="Our games exist in a shared universe, allowing assets and progress to transfer between different experiences."
-            gradientFrom="purple-600"
-            gradientTo="pink-600"
+            gradientFrom="from-brand-light"
+            gradientTo="to-brand-dark"
           />
 
           <FeatureCard
@@ -42,8 +44,8 @@ const About = () => {
             }
             title="True Ownership"
             description="Players truly own their beasts and items through blockchain technology, enabling trading, selling, and collecting."
-            gradientFrom="blue-600"
-            gradientTo="cyan-600"
+            gradientFrom="from-brand-light"
+            gradientTo="to-brand-dark"
           />
 
           <FeatureCard
@@ -63,8 +65,8 @@ const About = () => {
             }
             title="Community Driven"
             description="Our passionate community helps shape the future of ByteBeasts through governance and collaborative development."
-            gradientFrom="pink-600"
-            gradientTo="orange-600"
+            gradientFrom="from-brand-light"
+            gradientTo="to-brand-dark"
           />
         </div>
       </div>

@@ -85,4 +85,14 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  keyframes: {
+    shimmer: {
+      '0%': { backgroundPosition: '200% center' },
+      '100%': { backgroundPosition: '-200% center' },
+    },
+  },
+  animation: {
+    shimmer: 'shimmer 6s ease-in-out infinite',
+  },
+  
 }
