@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Twitter, Github, Instagram } from "lucide-react";
 import { TeamMember } from "../../types/types";
 
@@ -11,7 +10,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
           className={`absolute -inset-0.5 bg-gradient-to-r from-${member.gradientFrom} to-${member.gradientTo} rounded-2xl blur opacity-50 group-hover:opacity-100 transition-opacity`}
         ></div>
         <div className="relative bg-[#1C1C1C] rounded-2xl overflow-hidden p-1">
-          <Image
+          <img
             src={member.image}
             alt={member.name}
             width={300}
@@ -24,17 +23,17 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
       <p className="text-[#FFF6F0]/70 mb-2">{member.role}</p>
       <div className="flex gap-2">
         {member.social.twitter && (
-          <Link href={member.social.twitter} className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors">
+          <Link to={member.social.twitter} className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors">
             <Twitter className="h-5 w-5" />
           </Link>
         )}
         {member.social.github && (
-          <Link href={member.social.github} className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors">
+          <Link to={member.social.github} className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors">
             <Github className="h-5 w-5" />
           </Link>
         )}
         {member.social.instagram && (
-          <Link href={member.social.instagram} className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors">
+          <Link to={member.social.instagram} className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors">
             <Instagram className="h-5 w-5" />
           </Link>
         )}

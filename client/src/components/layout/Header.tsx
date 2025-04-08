@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/Button";
 
 const Header = () => {
@@ -7,19 +6,19 @@ const Header = () => {
     <header className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="ByteBeasts Logo" width={180} height={40} className="h-10 w-auto" />
+          <img src="/logo.png" alt="Logo" width={180} height={40} className="h-10 w-auto" />
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#about" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+          <Link to="#about" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
             About
           </Link>
-          <Link href="#games" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+          <Link to="#games" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
             Games
           </Link>
-          <Link href="#team" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+          <Link to="#team" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
             Team
           </Link>
-          <Link href="#community" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
+          <Link to="#community" className="text-[#FFF6F0] hover:text-[#FFF6F0]/80 transition-colors">
             Community
           </Link>
         </nav>

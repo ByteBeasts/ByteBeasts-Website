@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router-dom";
 import { Twitter, Github, Instagram, DiscIcon as Discord } from "lucide-react";
 
 interface FooterLinkGroup {
@@ -62,7 +61,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <Image src="/logo.png" alt="ByteBeasts Logo" width={180} height={40} className="h-10 w-auto mb-6" />
+            <img src="/logo.png" alt="Logo" width={180} height={40} className="h-10 w-auto mb-6" />
             <p className="text-[#FFF6F0]/70 mb-6">
               ByteBeasts is an interconnected on-chain universe where players collect, train, and battle unique
               beasts.
@@ -71,7 +70,7 @@ const Footer = () => {
               {socialLinks.map((link) => (
                 <Link 
                   key={link.name}
-                  href={link.href} 
+                  to={link.href} 
                   className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors"
                   aria-label={link.name}
                 >
@@ -88,7 +87,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-[#FFF6F0]/70 hover:text-[#FFF6F0] transition-colors">
+                    <Link to={link.href} className="text-[#FFF6F0]/70 hover:text-[#FFF6F0] transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -107,7 +106,7 @@ const Footer = () => {
             {legalLinks.map((link) => (
               <Link 
                 key={link.name}
-                href={link.href} 
+                to={link.href} 
                 className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors text-sm"
               >
                 {link.name}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "./Button";
 import { ArrowRight } from "lucide-react";
 
@@ -33,7 +32,7 @@ const AnnouncementCard = ({
             className={`absolute -inset-0.5 bg-gradient-to-r from-${gradientFrom} to-${gradientTo} rounded-2xl blur opacity-75`}
           />
           <div className="relative bg-[#1C1C1C] rounded-2xl overflow-hidden">
-            <Image
+            <img
               src={image}
               alt={title}
               width={600}

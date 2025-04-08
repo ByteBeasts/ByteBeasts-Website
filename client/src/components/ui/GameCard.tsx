@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export interface Game {
   id: string;
   title: string;
@@ -17,7 +15,7 @@ const GameCard = ({ game }: { game: Game }) => {
           className={`absolute -inset-0.5 bg-gradient-to-r from-${game.gradientFrom} to-${game.gradientTo} rounded-2xl blur opacity-75 group-hover:opacity-100 transition-opacity`}
         ></div>
         <div className="relative">
-          <Image
+          <img
             src={game.image}
             alt={game.title}
             width={400}
