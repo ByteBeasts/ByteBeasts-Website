@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/Button";
 import GameCard from "../ui/GameCard";
 
 const games = [
