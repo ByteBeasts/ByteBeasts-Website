@@ -1,5 +1,5 @@
 import { Globe } from "lucide-react";
-import FeatureCard from "./FeatureCard";
+import FeatureCard from "../ui/FeatureCard";
 
 const About = () => {
   return (
