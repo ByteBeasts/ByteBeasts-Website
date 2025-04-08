@@ -54,15 +54,15 @@ const legalLinks = [
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="py-12 border-t border-[#FFF6F0]/10">
+    <footer className="py-12 border-t border-border font-montserrat">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
             <img src="/logo.png" alt="Logo" width={180} height={40} className="h-10 w-auto mb-6" />
-            <p className="text-[#FFF6F0]/70 mb-6">
+            <p className="text-foreground/70 mb-6">
               ByteBeasts is an interconnected on-chain universe where players collect, train, and battle unique
               beasts.
             </p>
@@ -71,7 +71,7 @@ const Footer = () => {
                 <Link 
                   key={link.name}
                   to={link.href} 
-                  className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors"
+                  className="text-foreground/50 hover:text-primary transition-colors"
                   aria-label={link.name}
                 >
                   {link.icon}
@@ -83,11 +83,11 @@ const Footer = () => {
           {/* Link Groups */}
           {linkGroups.map((group) => (
             <div key={group.title}>
-              <h3 className="text-lg font-bold mb-6">{group.title}</h3>
+              <h3 className="text-lg font-bold mb-6 text-foreground">{group.title}</h3>
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.name}>
-                    <Link to={link.href} className="text-[#FFF6F0]/70 hover:text-[#FFF6F0] transition-colors">
+                    <Link to={link.href} className="text-foreground/70 hover:text-primary transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -98,8 +98,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright and Legal Links */}
-        <div className="pt-8 border-t border-[#FFF6F0]/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#FFF6F0]/50 text-sm mb-4 md:mb-0">
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
+          <p className="text-foreground/50 text-sm mb-4 md:mb-0">
             &copy; {currentYear} ByteBeasts. All rights reserved.
           </p>
           <div className="flex gap-6">
@@ -107,7 +107,7 @@ const Footer = () => {
               <Link 
                 key={link.name}
                 to={link.href} 
-                className="text-[#FFF6F0]/50 hover:text-[#FFF6F0] transition-colors text-sm"
+                className="text-foreground/50 hover:text-primary transition-colors text-sm"
               >
                 {link.name}
               </Link>
