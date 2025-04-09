@@ -1,6 +1,6 @@
 import SocialLink from "../ui/SocialLink";
 import NewsletterForm from "../ui/NewsletterForm";
-import { Github, Twitter, Instagram, DiscIcon as Discord } from "lucide-react";
+import { SiX, SiDiscord, SiGithub, SiLinkedin} from "react-icons/si";
 
 const Community = () => {
   return (
@@ -12,14 +12,14 @@ const Community = () => {
           Join Our Community
         </h2>
         <p className="text-foreground/80 text-lg mb-8 font-montserrat">
-          Connect with fellow beast tamers, participate in events, and help shape the future of the ByteBeasts
-          universe.
+        Connect with fellow Beast tamers, join events, access exclusive content, and help shape the future of ByteBeasts. 
+        From AMAs to seasonal challenges, there’s always something happening.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <SocialLink icon={<Discord className="h-6 w-6 text-[#5865F2]" />} name="Discord" href="#" />
-          <SocialLink icon={<Twitter className="h-6 w-6 text-[#1DA1F2]" />} name="Twitter" href="#" />
-          <SocialLink icon={<Instagram className="h-6 w-6 text-[#E1306C]" />} name="Instagram" href="#" />
-          <SocialLink icon={<Github className="h-6 w-6 text-foreground" />} name="GitHub" href="#" />
+          <SocialLink icon={<SiDiscord className="h-6 w-6 text-[#5865F2]" />} name="Discord" href="https://discord.gg/fctH5vh9" />
+          <SocialLink icon={<SiX className="h-6 w-6 text-foreground" />} name="Twitter" href="https://x.com/0xByteBeasts" />
+          <SocialLink icon={<SiLinkedin className="h-6 w-6 text-[#1DA1F2]" />} name="Linkedin" href="https://www.linkedin.com/company/bytebeasts" />
+          <SocialLink icon={<SiGithub className="h-6 w-6 text-foreground" />} name="GitHub" href="https://github.com/ByteBuildersLabs" />
         </div>
       </div>
       <div className="w-full md:w-1/2">
@@ -28,7 +28,7 @@ const Community = () => {
           <div className="relative bg-secondary p-8 rounded-2xl border border-border">
             <h3 className="text-2xl font-bold mb-6 font-kallisto text-foreground">Stay Updated</h3>
             <p className="text-foreground/80 mb-6 font-montserrat">
-              Subscribe to our newsletter for the latest news, updates, and exclusive offers.
+              Get the latest updates, alpha invites, and special offers by subscribing to our newsletter..
             </p>
             <NewsletterForm />
           </div>

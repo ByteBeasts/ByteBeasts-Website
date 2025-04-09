@@ -11,8 +11,9 @@ const About = () => {
             About ByteBeasts
           </h2>
           <p className="text-foreground/80 text-lg font-montserrat">
-            ByteBeasts represents the convergence of tradition and innovation: a universe where the nostalgia of
-            monster-taming meets the cutting edge of blockchain technology.
+          ByteBeasts fuses the timeless magic of monster-taming with the power of blockchain. 
+          It's more than just a game—it's a persistent, player-owned universe where your Beasts evolve, 
+          retain memories, and travel across interconnected experiences.
           </p>
         </div>
 
@@ -20,7 +21,7 @@ const About = () => {
           <FeatureCard
             icon={<Globe className="h-8 w-8 text-white" />}
             title="Interconnected Universe"
-            description="Our games exist in a shared universe, allowing assets and progress to transfer between different experiences."
+            description="Your Beast is never locked in. Progress and memories carry over across all games in the ByteBeasts ecosystem."
             gradientFrom="from-brand-light"
             gradientTo="to-brand-dark"
           />
@@ -43,7 +44,7 @@ const About = () => {
               </svg>
             }
             title="True Ownership"
-            description="Players truly own their beasts and items through blockchain technology, enabling trading, selling, and collecting."
+            description="Built on Starknet, your Beasts live on-chain forever—fully owned by you, not the platform."
             gradientFrom="from-brand-light"
             gradientTo="to-brand-dark"
           />
@@ -64,7 +65,7 @@ const About = () => {
               </svg>
             }
             title="Community Driven"
-            description="Our passionate community helps shape the future of ByteBeasts through governance and collaborative development."
+            description="A game shaped by its players, for its players. Events, tournaments, and evolution based on community input and participation."
             gradientFrom="from-brand-light"
             gradientTo="to-brand-dark"
           />

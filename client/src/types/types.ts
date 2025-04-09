@@ -4,11 +4,10 @@ export interface TeamMember {
     role: string;
     image: string;
     social: {
+      linkedin?: any;
       twitter?: string;
       github?: string;
       instagram?: string;
     };
-    gradientFrom: string;
-    gradientTo: string;
   }
   

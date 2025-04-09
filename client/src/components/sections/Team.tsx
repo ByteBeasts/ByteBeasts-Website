@@ -3,52 +3,59 @@ import TeamMemberCard from "../ui/TeamMemberCard";
 
 const teamMembers: TeamMember[] = [
   {
-    id: "sarah-chen",
-    name: "Sarah Chen",
-    role: "CEO & Co-Founder",
-    image: "/team1.png",
+    id: "daniel-calderon",
+    name: "Daniel Calderón",
+    role: "CEO, Core Dev & Co-Founder",
+    image: "/team/daniPFP.png",
     social: {
-      twitter: "#",
-      github: "#",
+      twitter: "https://x.com/0xCadix",
+      github: "https://github.com/danielcdz",
+      linkedin: "https://www.linkedin.com/in/daniel-calderon-diaz-50928022b/",
     },
-    gradientFrom: "purple-600",
-    gradientTo: "pink-600",
   },
   {
-    id: "marcus-johnson",
-    name: "Marcus Johnson",
-    role: "CTO & Co-Founder",
-    image: "/team2.png",
+    id: "marco-araya",
+    name: "Marco Araya",
+    role: "CPO, Core Dev & Co-Founder",
+    image: "/team/marcoPFP.png",
     social: {
-      twitter: "#",
-      github: "#",
+      twitter: "https://x.com/coxmar_devCR",
+      github: "https://github.com/coxmars",
+      linkedin: "https://www.linkedin.com/in/marcoarayajimenez/",
     },
-    gradientFrom: "blue-600",
-    gradientTo: "cyan-600",
   },
   {
-    id: "elena-rodriguez",
-    name: "Elena Rodriguez",
-    role: "Art Director",
-    image: "/team3.png",
+    id: "luis-jimenez",
+    name: "Luis Jiménez",
+    role: "CMO, Core Dev & Co-Founder",
+    image: "/team/luisPFP.png",
     social: {
-      twitter: "#",
-      instagram: "#",
+      twitter: "https://x.com/devJimenezz22",
+      github: "https://github.com/jimenezz22",
+      linkedin: "https://www.linkedin.com/in/luis-jimenez22/",
     },
-    gradientFrom: "pink-600",
-    gradientTo: "orange-600",
   },
   {
-    id: "jamal-williams",
-    name: "Jamal Williams",
-    role: "Lead Game Designer",
-    image: "/team4.png",
+    id: "rolo-arguello",
+    name: "Rolando Arguello",
+    role: "COO, Core Dev & Co-Founder",
+    image: "/team/roloPFP.png",
     social: {
-      twitter: "#",
-      github: "#",
+      twitter: "https://x.com/roloxworld",
+      github: "https://github.com/RolandoDrRobot",
+      linkedin: "https://www.linkedin.com/in/rolando-arguello-531942186/",
     },
-    gradientFrom: "purple-600",
-    gradientTo: "blue-600",
+  },
+  {
+    id: "daniel-villatoro",
+    name: "Daniel Villatoro",
+    role: "Core Dev",
+    image: "/team/villatoroPFP.jpeg",
+    social: {
+      twitter: "https://x.com/DanielV47204896",
+      github: "https://github.com/DanielVillatoro",
+      linkedin: "https://www.linkedin.com/in/danielvillatoroc/",
+    },
   },
 ];
 
@@ -61,7 +68,7 @@ const Team = () => {
             Meet Our Team
           </h2>
           <p className="text-lg text-foreground/80 font-montserrat">
-            The talented individuals behind ByteBeasts, bringing together expertise in gaming, blockchain, and art.
+            The talented individuals behind ByteBeasts, bringing together expertise in gaming and blockchain industries.
           </p>
         </div>
 
