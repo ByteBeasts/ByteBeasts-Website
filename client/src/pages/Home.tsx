@@ -9,15 +9,21 @@ import Community from "../components/sections/Community";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-[#1C1C1C] text-[#FFF6F0]">
-      <Header />
-      <Hero />
-      <FeaturedGame />
-      <About />
-      <Games />
-      <Team />
-      <Community />
-      <Footer />
+    <div className="relative min-h-screen overflow-x-hidden">
+      {/* Fondo gradiente general detrás de toda la landing */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-dark/40 to-black" />
+
+      {/* Contenido de la landing */}
+      <div className="relative z-10 text-foreground">
+        <Header />
+        <Hero />
+        <FeaturedGame />
+        <About />
+        <Games />
+        <Team />
+        <Community />
+        <Footer />
+      </div>
     </div>
   );
 };

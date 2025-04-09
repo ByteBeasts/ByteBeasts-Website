@@ -29,7 +29,7 @@ const AnnouncementCard = ({
       <div className="w-full md:w-1/2">
         <div className="relative">
           <div
-            className={`absolute -inset-0.5 bg-gradient-to-r from-${gradientFrom} to-${gradientTo} rounded-2xl blur opacity-75`}
+            className={`absolute -inset-0.5 bg-gradient-to-r ${gradientFrom} ${gradientTo} rounded-2xl blur opacity-75`}
           />
           <div className="relative bg-[#1C1C1C] rounded-2xl overflow-hidden">
             <img
@@ -45,7 +45,7 @@ const AnnouncementCard = ({
 
       <div className="w-full md:w-1/2">
         <div
-          className={`inline-block px-4 py-1 bg-gradient-to-r from-${gradientFrom} to-${gradientTo} rounded-full text-sm font-medium mb-4`}
+          className={`inline-block px-4 py-1 bg-gradient-to-r ${gradientFrom} ${gradientTo} rounded-full text-sm font-medium mb-4`}
         >
           {badge}
         </div>
@@ -53,9 +53,9 @@ const AnnouncementCard = ({
         {date && <p className="text-[#FFF6F0]/80 text-lg mb-6">{date}</p>}
         <p className="text-[#FFF6F0]/80 mb-8">{description}</p>
         <a href={ctaLink}>
-          <Button className={`bg-gradient-to-r from-${gradientFrom} to-${gradientTo} hover:from-${gradientFrom} hover:to-${gradientTo} text-white border-none`}>
-            {ctaText} <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+        <Button className={`bg-gradient-to-r ${gradientFrom} ${gradientTo} hover:opacity-90 text-white border-none`}>
+          {ctaText} <ArrowRight className="ml-2 h-5 w-5" />
+        </Button>
         </a>
       </div>
     </div>
