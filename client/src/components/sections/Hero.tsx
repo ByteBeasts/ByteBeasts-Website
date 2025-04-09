@@ -20,12 +20,19 @@ const Hero = () => {
               Beast in a universe designed to transcend generations
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="gradient" className="text-lg px-8 py-6">
+              <Button
+                variant="gradient"
+                className="text-lg px-8 py-6"
+                onClick={() => {
+                  document.getElementById("games")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
                 Explore Games <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
                 variant="outline"
                 className="text-foreground border-foreground hover:bg-white hover:text-brand-dark text-lg px-8 py-6"
+                onClick={() => window.open("https://discord.gg/fctH5vh9", "_blank")}
               >
                 Join Community
               </Button>

@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { SiX, SiGithub, SiLinkedin} from "react-icons/si";
+import { SiX, SiGithub, SiLinkedin } from "react-icons/si";
 import { TeamMember } from "../../types/types";
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => {
@@ -19,20 +18,35 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
       <h3 className="text-xl font-bold mb-1 font-kallisto text-foreground">{member.name}</h3>
       <p className="text-foreground/70 mb-2">{member.role}</p>
       <div className="flex gap-2">
-      {member.social.linkedin && (
-          <Link to={member.social.linkedin} className="text-foreground/50 hover:text-primary transition-colors">
+        {member.social.linkedin && (
+          <a
+            href={member.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground/50 hover:text-primary transition-colors"
+          >
             <SiLinkedin className="h-5 w-5" />
-          </Link>
+          </a>
         )}
         {member.social.twitter && (
-          <Link to={member.social.twitter} className="text-foreground/50 hover:text-primary transition-colors">
+          <a
+            href={member.social.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground/50 hover:text-primary transition-colors"
+          >
             <SiX className="h-5 w-5" />
-          </Link>
+          </a>
         )}
         {member.social.github && (
-          <Link to={member.social.github} className="text-foreground/50 hover:text-primary transition-colors">
+          <a
+            href={member.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground/50 hover:text-primary transition-colors"
+          >
             <SiGithub className="h-5 w-5" />
-          </Link>
+          </a>
         )}
       </div>
     </div>

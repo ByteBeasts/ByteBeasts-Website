@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { SiX, SiDiscord, SiGithub, SiLinkedin} from "react-icons/si";
+import { SiX, SiDiscord, SiGithub, SiLinkedin } from "react-icons/si";
 
 interface FooterLinkGroup {
   title: string;
@@ -61,14 +60,16 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-foreground/50 hover:text-primary transition-colors"
                   aria-label={link.name}
                 >
                   {link.icon}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -80,9 +81,20 @@ const Footer = () => {
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.name}>
-                    <Link to={link.href} className="text-foreground/70 hover:text-primary transition-colors">
-                      {link.name}
-                    </Link>
+                    {link.href.startsWith("#") ? (
+                      <a href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
+                        {link.name}
+                      </a>
+                    ) : (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground/70 hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -108,13 +120,13 @@ const Footer = () => {
           {/* Legal Links */}
           <div className="flex gap-6">
             {legalLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.href}
+                href={link.href}
                 className="text-foreground/50 hover:text-primary transition-colors text-sm"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
