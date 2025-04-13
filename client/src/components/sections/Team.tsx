@@ -61,7 +61,7 @@ const teamMembers: TeamMember[] = [
 
 const Team = () => {
   return (
-    <section id="team" className="py-20 bg-secondary relative">
+    <section id="team" className="py-40 bg-secondary relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-foreground">
@@ -72,7 +72,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {teamMembers.map((member) => (
             <TeamMemberCard key={member.id} member={member} />
           ))}
