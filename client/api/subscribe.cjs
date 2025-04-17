@@ -1,8 +1,7 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
-import axios from 'axios';
-import crypto from 'crypto';
+const axios = require('axios');
+const crypto = require('crypto');
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+module.exports = async (req, res) => {
     // Validate HTTP method
     if (req.method !== 'POST') {
         return res.status(405).json({ success: false, message: 'Method not allowed' });
@@ -18,7 +17,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
         // Mailchimp configuration
         const API_KEY = process.env.MAILCHIMP_API_KEY;
-        const SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX; // e.g., "us10"
+        const SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX;
         const LIST_ID = process.env.MAILCHIMP_LIST_ID;
         
         if (!API_KEY || !SERVER_PREFIX || !LIST_ID) {
