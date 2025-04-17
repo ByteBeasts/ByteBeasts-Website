@@ -1,4 +1,4 @@
-// Express server for local development
+// Express Server for local development (CommonJS)
 const express = require('express');
 const axios = require('axios');
 const crypto = require('crypto');
@@ -27,11 +27,11 @@ app.post('/api/subscribe', async (req, res) => {
     try {
         // Mailchimp configuration
         const API_KEY = process.env.MAILCHIMP_API_KEY;
-        const SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX; 
+        const SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX; // e.g., "us10"
         const LIST_ID = process.env.MAILCHIMP_LIST_ID;
         
         if (!API_KEY || !SERVER_PREFIX || !LIST_ID) {
-            throw new Error('Mailchimp configuration is missing');
+            throw new Error('Missing Mailchimp configuration');
         }
 
         // Create an MD5 hash of the email (required by Mailchimp)
@@ -43,7 +43,7 @@ app.post('/api/subscribe', async (req, res) => {
         // Request configuration
         const data = {
             email_address: email,
-            status: 'subscribed', // 'pending' for double opt-in, 'subscribed' for direct subscription
+            status: 'pending', // 'pending' for double opt-in, 'subscribed' for direct subscription
         };
 
         // Make the request to Mailchimp
