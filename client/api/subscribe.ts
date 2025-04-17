@@ -1,22 +1,13 @@
-// Express Server for local development (CommonJS)
-const express = require('express');
-const axios = require('axios');
-const crypto = require('crypto');
-const cors = require('cors');
-const dotenv = require('dotenv');
+import { VercelRequest, VercelResponse } from '@vercel/node';
+import axios from 'axios';
+import crypto from 'crypto';
 
-// Load environment variables
-dotenv.config();
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+    // Validate HTTP method
+    if (req.method !== 'POST') {
+        return res.status(405).json({ success: false, message: 'Method not allowed' });
+    }
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Endpoint for Mailchimp subscription
-app.post('/api/subscribe', async (req, res) => {
     const { email } = req.body;
 
     // Validate email
@@ -31,7 +22,7 @@ app.post('/api/subscribe', async (req, res) => {
         const LIST_ID = process.env.MAILCHIMP_LIST_ID;
         
         if (!API_KEY || !SERVER_PREFIX || !LIST_ID) {
-            throw new Error('Missing Mailchimp configuration');
+            throw new Error('Mailchimp configuration is missing');
         }
 
         // Create an MD5 hash of the email (required by Mailchimp)
@@ -60,7 +51,7 @@ app.post('/api/subscribe', async (req, res) => {
         });
         
     } catch (error) {
-        console.error('Subscription error:', error);
+        console.error('Error subscribing:', error);
         
         // Specific handling for Mailchimp errors
         if (axios.isAxiosError(error) && error.response) {
@@ -83,9 +74,4 @@ app.post('/api/subscribe', async (req, res) => {
             message: 'Error processing the subscription. Please try again later.' 
         });
     }
-});
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-});
+}
