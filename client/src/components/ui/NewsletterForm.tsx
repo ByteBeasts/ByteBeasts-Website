@@ -64,7 +64,7 @@ const NewsletterForm = () => {
 
       {status === "success" && (
         <div className="p-3 bg-green-800/30 border border-green-600 rounded-md text-white">
-          You have successfully subscribed! Check your email to confirm the subscription.
+          You have successfully subscribed to ByteBeasts newsletter!
         </div>
       )}
 
