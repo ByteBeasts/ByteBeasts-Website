@@ -1,7 +1,7 @@
-const axios = require('axios');
-const crypto = require('crypto');
+import axios from 'axios';
+import crypto from 'crypto';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
     // Validate HTTP method
     if (req.method !== 'POST') {
         return res.status(405).json({ success: false, message: 'Method not allowed' });
