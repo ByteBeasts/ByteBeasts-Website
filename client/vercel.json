@@ -8,8 +8,7 @@
   "functions": {
     "api/subscribe.cjs": {
       "memory": 1024,
-      "maxDuration": 10,
-      "runtime": "nodejs18.x"
+      "maxDuration": 10
     }
   }
 }
