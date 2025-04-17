@@ -4,11 +4,5 @@
   "framework": "vite",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "functions": {
-    "api/subscribe.cjs": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  ]
 }
