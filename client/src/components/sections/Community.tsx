@@ -16,7 +16,7 @@ const Community = () => {
         From AMAs to seasonal challenges, there’s always something happening.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <SocialLink icon={<SiDiscord className="h-6 w-6 text-[#5865F2]" />} name="Discord" href="https://discord.gg/fctH5vh9" />
+          <SocialLink icon={<SiDiscord className="h-6 w-6 text-[#5865F2]" />} name="Discord" href="https://discord.gg/3FHprvHHeA" />
           <SocialLink icon={<SiX className="h-6 w-6 text-foreground" />} name="Twitter" href="https://x.com/0xByteBeasts" />
           <SocialLink icon={<SiLinkedin className="h-6 w-6 text-[#1DA1F2]" />} name="Linkedin" href="https://www.linkedin.com/company/bytebeasts" />
           <SocialLink icon={<SiGithub className="h-6 w-6 text-foreground" />} name="GitHub" href="https://github.com/ByteBuildersLabs" />

@@ -35,7 +35,7 @@ const socialLinks = [
   { name: "LinkedIn", href: "https://www.linkedin.com/company/bytebeasts/", icon: <SiLinkedin className="h-5 w-5" /> },
   { name: "Twitter", href: "https://x.com/0xByteBeasts", icon: <SiX className="h-5 w-5" /> },
   { name: "Github", href: "https://github.com/ByteBuildersLabs", icon: <SiGithub className="h-5 w-5" /> },
-  { name: "Discord", href: "https://discord.gg/fctH5vh9", icon: <SiDiscord className="h-5 w-5" /> },
+  { name: "Discord", href: "https://discord.gg/3FHprvHHeA", icon: <SiDiscord className="h-5 w-5" /> },
 ];
 
 const legalLinks = [
