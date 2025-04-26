@@ -50,7 +50,7 @@ const GameCard = ({ game }: { game: Game }) => {
           <Button
             variant="outline"
             className="px-6 py-2 text-sm"
-            onClick={() => window.open(game.playButton, "_blank")}
+            onClick={() => window.open(game.docsButton, "_blank")}
           >
             Whitepaper
           </Button>
