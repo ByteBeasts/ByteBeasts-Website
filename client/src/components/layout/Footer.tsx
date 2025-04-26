@@ -37,11 +37,11 @@ const socialLinks = [
   { name: "Discord", href: "https://discord.gg/3FHprvHHeA", icon: <SiDiscord className="h-5 w-5" /> },
 ];
 
-const legalLinks = [
-  { name: "Privacy Policy", href: "#" },
-  { name: "Terms of Service", href: "#" },
-  { name: "Cookie Policy", href: "#" },
-];
+// const legalLinks = [
+//   { name: "Privacy Policy", href: "#" },
+//   { name: "Terms of Service", href: "#" },
+//   { name: "Cookie Policy", href: "#" },
+// ];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -116,7 +116,7 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Legal Links */}
+          {/* Legal Links
           <div className="flex gap-6">
             {legalLinks.map((link) => (
               <a
@@ -127,7 +127,7 @@ const Footer = () => {
                 {link.name}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Copyright */}
