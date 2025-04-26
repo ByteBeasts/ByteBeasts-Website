@@ -1,14 +1,15 @@
-import { Button } from "../ui/Button";
 import GameCard from "../ui/GameCard";
 
 const games = [
   {
     id: "tamagotchi",
-    title: "Tamagotchi",
-    description: "Raise your own beast",
+    title: "",
+    description: "",
     image: "/games/tamagotchiLogo.png",
     gradientFrom: "from-brand-light",
     gradientTo: "to-brand-dark",
+    playButton: "https://www.bytebeasts.games",
+    docsButton: "https://drive.google.com/file/d/1fhAqQlW74tjnotdDqXFI3f4l_-RGl0gy/view?usp=sharing",
   },
 ];
 
@@ -48,12 +49,6 @@ const Games = () => {
             ))}
           </div>
         )}
-
-        <div className="text-center mt-12">
-          <Button variant="gradient" className="px-8" onClick={() => window.open("https://www.bytebeasts.games", "_blank")}>
-            Play
-          </Button>
-        </div>
       </div>
     </section>
   );
