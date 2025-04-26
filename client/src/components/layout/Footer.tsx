@@ -14,19 +14,18 @@ const linkGroups: FooterLinkGroup[] = [
     links: [{ name: "Tamagotchi", href: "https://www.bytebeasts.games" }],
   },
   {
-    title: "Resources",
+    title: "About Us",
     links: [
-      { name: "Whitepaper", href: "#" },
-      { name: "Documentation", href: "#" },
-      { name: "FAQ", href: "#" },
+      { name: "Product Brief", href: "https://byte-beasts-docs.vercel.app/" },
+      { name: "Whitepaper", href: "https://drive.google.com/file/d/1fhAqQlW74tjnotdDqXFI3f4l_-RGl0gy/view?usp=sharing" },
+      // { name: "FAQ", href: "#" },
     ],
   },
   {
     title: "Company",
     links: [
-      { name: "About Us", href: "#" },
       { name: "Partners", href: "#" },
-      { name: "Contact", href: "#" },
+      // { name: "Contact", href: "#" },
     ],
   },
 ];
