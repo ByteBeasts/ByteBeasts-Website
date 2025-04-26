@@ -16,7 +16,7 @@ const linkGroups: FooterLinkGroup[] = [
   {
     title: "About Us",
     links: [
-      { name: "Product Brief", href: "https://byte-beasts-docs.vercel.app/" },
+      { name: "Product Brief", href: "https://docs.bytebeasts.games/" },
       { name: "Whitepaper", href: "https://drive.google.com/file/d/1fhAqQlW74tjnotdDqXFI3f4l_-RGl0gy/view?usp=sharing" },
       // { name: "FAQ", href: "#" },
     ],
