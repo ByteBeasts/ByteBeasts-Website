@@ -1,7 +1,7 @@
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Hero from "../components/sections/Hero";
-import FeaturedGame from "../components/sections/Announcement";
+// import FeaturedGame from "../components/sections/Announcement";
 import About from "../components/sections/About";
 import Games from "../components/sections/Games";
 import Team from "../components/sections/Team";
@@ -17,7 +17,7 @@ const Home = () => {
       <div className="relative z-10 text-foreground">
         <Header />
         <Hero />
-        <FeaturedGame />
+        {/* <FeaturedGame /> */}
         <About />
         <Games />
         <Team />

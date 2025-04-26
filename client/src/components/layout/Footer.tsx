@@ -14,19 +14,18 @@ const linkGroups: FooterLinkGroup[] = [
     links: [{ name: "Tamagotchi", href: "https://www.bytebeasts.games" }],
   },
   {
-    title: "Resources",
+    title: "About Us",
     links: [
-      { name: "Whitepaper", href: "#" },
-      { name: "Documentation", href: "#" },
-      { name: "FAQ", href: "#" },
+      { name: "Product Brief", href: "https://byte-beasts-docs.vercel.app/" },
+      { name: "Whitepaper", href: "https://drive.google.com/file/d/1fhAqQlW74tjnotdDqXFI3f4l_-RGl0gy/view?usp=sharing" },
+      // { name: "FAQ", href: "#" },
     ],
   },
   {
     title: "Company",
     links: [
-      { name: "About Us", href: "#" },
       { name: "Partners", href: "#" },
-      { name: "Contact", href: "#" },
+      // { name: "Contact", href: "#" },
     ],
   },
 ];
@@ -35,14 +34,14 @@ const socialLinks = [
   { name: "LinkedIn", href: "https://www.linkedin.com/company/bytebeasts/", icon: <SiLinkedin className="h-5 w-5" /> },
   { name: "Twitter", href: "https://x.com/0xByteBeasts", icon: <SiX className="h-5 w-5" /> },
   { name: "Github", href: "https://github.com/ByteBuildersLabs", icon: <SiGithub className="h-5 w-5" /> },
-  { name: "Discord", href: "https://discord.gg/fctH5vh9", icon: <SiDiscord className="h-5 w-5" /> },
+  { name: "Discord", href: "https://discord.gg/3FHprvHHeA", icon: <SiDiscord className="h-5 w-5" /> },
 ];
 
-const legalLinks = [
-  { name: "Privacy Policy", href: "#" },
-  { name: "Terms of Service", href: "#" },
-  { name: "Cookie Policy", href: "#" },
-];
+// const legalLinks = [
+//   { name: "Privacy Policy", href: "#" },
+//   { name: "Terms of Service", href: "#" },
+//   { name: "Cookie Policy", href: "#" },
+// ];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -117,7 +116,7 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Legal Links */}
+          {/* Legal Links
           <div className="flex gap-6">
             {legalLinks.map((link) => (
               <a
@@ -128,7 +127,7 @@ const Footer = () => {
                 {link.name}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Copyright */}

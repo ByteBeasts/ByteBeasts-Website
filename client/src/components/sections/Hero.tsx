@@ -32,7 +32,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 className="text-foreground border-foreground hover:bg-white hover:text-brand-dark text-lg px-8 py-6"
-                onClick={() => window.open("https://discord.gg/fctH5vh9", "_blank")}
+                onClick={() => window.open("https://discord.gg/3FHprvHHeA", "_blank")}
               >
                 Join Community
               </Button>
