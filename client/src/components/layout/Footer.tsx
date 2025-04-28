@@ -17,6 +17,7 @@ const linkGroups: FooterLinkGroup[] = [
     title: "About Us",
     links: [
       { name: "Product Brief", href: "https://docs.bytebeasts.games/" },
+      { name: "Pitch Deck", href: "https://www.canva.com/design/DAGkdgWPmoE/AePB75_UcjFPCa3y2z-Nrw/edit?utm_content=DAGkdgWPmoE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" },
       { name: "Whitepaper", href: "https://drive.google.com/file/d/1fhAqQlW74tjnotdDqXFI3f4l_-RGl0gy/view?usp=sharing" },
       // { name: "FAQ", href: "#" },
     ],
