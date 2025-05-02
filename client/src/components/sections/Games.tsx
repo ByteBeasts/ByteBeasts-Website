@@ -110,7 +110,7 @@ export default function Games() {
         <Button 
           variant="outline" 
           className="border-border text-foreground hover:bg-muted"
-          onClick={() => window.open("#roadmap", "_self")}
+          onClick={() => window.open('https://docs.bytebeasts.games/Roadmap/roadmap', "_blank")}
         >
           View Roadmap
         </Button>

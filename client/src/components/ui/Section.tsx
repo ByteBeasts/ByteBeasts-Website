@@ -7,7 +7,7 @@ interface SectionProps {
   className?: string;
   children: React.ReactNode;
   title?: string;
-  customTitle?: React.ReactNode; // New prop for custom title component
+  customTitle?: React.ReactNode; 
   subtitle?: string;
   noPadding?: boolean;
   centerContent?: boolean;
@@ -85,7 +85,7 @@ const Section: React.FC<SectionProps> = ({
   
   const contentClasses = `
     container mx-auto px-4
-    ${centerContent ? 'flex flex-col items-center text-center' : ''}
+    ${centerContent ? 'flex flex-col items-center' : ''}
   `;
 
   return (
@@ -112,23 +112,23 @@ const Section: React.FC<SectionProps> = ({
           {/* Handle either custom title component or text title */}
           {(customTitle || title || subtitle) && (
             <motion.div 
-              className="mb-14"
+              className="mb-14 text-center mx-auto"
               variants={itemVariants}
             >
               {customTitle ? (
                 // Use the custom title component if provided
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-center mx-auto">
                   {customTitle}
                 </h2>
               ) : title ? (
                 // Otherwise use the text title
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-center mx-auto">
                   <span className="neon-glow">{title}</span>
                 </h2>
               ) : null}
               
               {subtitle && (
-                <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+                <p className="text-xl text-foreground/80 max-w-3xl mx-auto text-center">
                   {subtitle}
                 </p>
               )}
