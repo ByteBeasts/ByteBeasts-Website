@@ -1,78 +1,125 @@
-import { Globe } from "lucide-react";
-import FeatureCard from "../ui/FeatureCard";
+import React, { useRef, useEffect } from "react"
+import { motion } from "framer-motion"
+import { Link as LinkIcon, Cpu, Users } from "lucide-react"
+import { gsap } from "gsap"
+import Section from "../ui/Section" // Import the Section component
 
-const About = () => {
+interface FeatureCardProps {
+  icon: React.ReactNode
+  title: string
+  description: string
+  delay?: number
+}
+
+const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const card = cardRef.current
+    if (!card) return
+
+    // 3D tilt + glow
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      const xPct = x / rect.width - 0.5
+      const yPct = y / rect.height - 0.5
+
+      gsap.to(card, {
+        rotationY: xPct * 10,
+        rotationX: yPct * -10,
+        transformPerspective: 1000,
+        duration: 0.5,
+        ease: "power2.out",
+      })
+
+      const iconEl = card.querySelector(".feature-icon")
+      if (iconEl) {
+        gsap.to(iconEl, {
+          filter: "drop-shadow(0 0 8px rgba(149, 1, 36, 0.8))",
+          scale: 1.1,
+          duration: 0.3,
+        })
+      }
+    }
+
+    const handleMouseLeave = () => {
+      gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.5, ease: "power2.out" })
+      const iconEl = card.querySelector(".feature-icon")
+      if (iconEl) {
+        gsap.to(iconEl, {
+          filter: "drop-shadow(0 0 0 rgba(0,0,0,0))",
+          scale: 1,
+          duration: 0.3,
+        })
+      }
+    }
+
+    card.addEventListener("mousemove", handleMouseMove)
+    card.addEventListener("mouseleave", handleMouseLeave)
+    return () => {
+      card.removeEventListener("mousemove", handleMouseMove)
+      card.removeEventListener("mouseleave", handleMouseLeave)
+    }
+  }, [])
+
   return (
-    <section id="about" className="py-20 bg-secondary relative">
-      <div className="absolute inset-0 z-0"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-foreground">
-            About ByteBeasts
-          </h2>
-          <p className="text-foreground/80 text-lg font-montserrat">
-          ByteBeasts fuses the timeless magic of monster-taming with the power of blockchain. 
-          It's more than just a game—it's a persistent, player-owned universe where your Beasts evolve, 
-          retain memories, and travel across interconnected experiences.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <FeatureCard
-            icon={<Globe className="h-8 w-8 text-white" />}
-            title="Interconnected Universe"
-            description="Your Beast is never locked in. Progress and memories carry over across all games in the ByteBeasts ecosystem."
-            gradientFrom="from-brand-light"
-            gradientTo="to-brand-dark"
-          />
-
-          <FeatureCard
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-white"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                <line x1="16" y1="8" x2="2" y2="22"></line>
-                <line x1="17.5" y1="15" x2="9" y2="15"></line>
-              </svg>
-            }
-            title="True Ownership"
-            description="Built on Starknet, your Beasts live on-chain forever—fully owned by you, not the platform."
-            gradientFrom="from-brand-light"
-            gradientTo="to-brand-dark"
-          />
-
-          <FeatureCard
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-white"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>
-            }
-            title="Community Driven"
-            description="A game shaped by its players, for its players. Events, tournaments, and evolution based on community input and participation."
-            gradientFrom="from-brand-light"
-            gradientTo="to-brand-dark"
-          />
-        </div>
+    <motion.div
+      ref={cardRef}
+      className="bg-gradient-to-br from-secondary/80 to-secondary p-6 rounded-2xl border border-border shadow-xl"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay }}
+    >
+      <div className="feature-icon text-primary mb-4 transition-all duration-300">
+        {icon}
       </div>
-    </section>
-  );
-};
+      <h3 className="text-xl font-bold mb-2 font-kallisto text-foreground">{title}</h3>
+      <p className="text-foreground/70 font-montserrat">{description}</p>
+    </motion.div>
+  )
+}
 
-export default About;
+export default function About() {
+  return (
+    <Section 
+      id="about"
+      title="About ByteBeasts"
+      subtitle="Reimagining gaming through blockchain technology and nostalgic experiences."
+      className="relative"
+    >
+      {/* Custom overlay radial gradient - you can still add custom elements inside the Section */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle at center, rgba(149,1,36,0.05) 0%, rgba(0,0,0,0) 70%)",
+        }}
+      />
+
+      {/* Feature cards grid - main content goes directly inside the Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <FeatureCard
+          icon={<LinkIcon size={48} />}
+          title="Interconnected Universe"
+          description="All our games exist in the same universe, allowing for cross-game interactions and shared storylines."
+          delay={0.1}
+        />
+        <FeatureCard
+          icon={<Cpu size={48} />}
+          title="True Ownership"
+          description="Own your in-game assets as NFTs with real-world value and transferability between games."
+          delay={0.2}
+        />
+        <FeatureCard
+          icon={<Users size={48} />}
+          title="Community Driven"
+          description="Our community shapes the future of our games through governance and collaborative development."
+          delay={0.3}
+        />
+      </div>
+    </Section>
+  )
+}

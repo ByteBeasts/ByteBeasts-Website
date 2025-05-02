@@ -1,5 +1,7 @@
-import { TeamMember } from "../../types/types";
-import TeamMemberCard from "../ui/TeamMemberCard";
+import { motion } from "framer-motion"
+import type { TeamMember } from "../../types/types"
+import TeamMemberCard from "../ui/TeamMemberCard"
+import Section from "../ui/Section" 
 
 const teamMembers: TeamMember[] = [
   {
@@ -7,6 +9,7 @@ const teamMembers: TeamMember[] = [
     name: "Daniel Calderón",
     role: "CEO, Core Dev & Co-Founder",
     image: "/team/daniPFP.png",
+    specialty: "Backend Engineer",
     social: {
       twitter: "https://x.com/0xCadix",
       github: "https://github.com/danielcdz",
@@ -18,6 +21,7 @@ const teamMembers: TeamMember[] = [
     name: "Marco Araya",
     role: "CPO, Core Dev & Co-Founder",
     image: "/team/marcoPFP.png",
+    specialty: "Backend Engineer",
     social: {
       twitter: "https://x.com/coxmar_devCR",
       github: "https://github.com/coxmars",
@@ -29,6 +33,7 @@ const teamMembers: TeamMember[] = [
     name: "Luis Jiménez",
     role: "CMO, Core Dev & Co-Founder",
     image: "/team/luisPFP.png",
+    specialty: "Full-Stack Engineer",
     social: {
       twitter: "https://x.com/devJimenezz22",
       github: "https://github.com/jimenezz22",
@@ -40,6 +45,7 @@ const teamMembers: TeamMember[] = [
     name: "Rolando Arguello",
     role: "COO, Core Dev & Co-Founder",
     image: "/team/roloPFP.png",
+    specialty: "Integration Manager",
     social: {
       twitter: "https://x.com/roloxworld",
       github: "https://github.com/RolandoDrRobot",
@@ -51,36 +57,48 @@ const teamMembers: TeamMember[] = [
     name: "Daniel Villatoro",
     role: "Core Dev",
     image: "/team/villatoroPFP.jpeg",
+    specialty: "Full-Stack Engineer",
     social: {
       twitter: "https://x.com/DanielV47204896",
       github: "https://github.com/DanielVillatoro",
       linkedin: "https://www.linkedin.com/in/danielvillatoroc/",
     },
   },
-];
+]
 
 const Team = () => {
+  // Enhanced motion variants for the team grid
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
-    <section id="team" className="py-40 bg-secondary relative">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-foreground">
-            Meet Our Team
-          </h2>
-          <p className="text-lg text-foreground/80 font-montserrat">
-            The talented individuals behind ByteBeasts, bringing together expertise in gaming and blockchain industries.
-          </p>
-        </div>
+    <Section
+      id="team"
+      title="Meet Our Team"
+      subtitle="The talented individuals behind ByteBeasts, bringing together expertise in gaming and blockchain industries."
+      className="py-40" 
+    >
+      {/* Team members grid with staggered animation */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"
+      >
+        {teamMembers.map((member, index) => (
+          <TeamMemberCard key={member.id} member={member} index={index} />
+        ))}
+      </motion.div>
+    </Section>
+  )
+}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.id} member={member} />
-          ))}
-        </div>
-      </div>
-    </section>
-
-  );
-};
-
-export default Team;
+export default Team
