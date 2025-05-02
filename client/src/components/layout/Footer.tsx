@@ -92,6 +92,31 @@ const Footer = () => {
         background: "linear-gradient(to bottom, #250812 0%, #1b0111 50%, #0d0109 100%)",
       }}
     >
+      {/* Add subtle particle effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(10)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white/20 rounded-full"
+            initial={{
+              x: `${Math.random() * 100}%`,
+              y: `${Math.random() * 100}%`,
+              opacity: 0,
+            }}
+            animate={{
+              y: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
+              opacity: [0, 0.3, 0],
+              scale: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial="hidden"
@@ -101,7 +126,18 @@ const Footer = () => {
         >
           {/* Company Info */}
           <motion.div variants={itemVariants}>
-            <img src="/logos/lightIcon.png" alt="Logo" width={180} height={40} className="h-10 w-auto mb-6" />
+            <motion.img 
+              src="/logos/lightIcon.png" 
+              alt="Logo" 
+              width={180} 
+              height={40} 
+              className="h-10 w-auto mb-6"
+              whileHover={{ 
+                filter: "drop-shadow(0 0 8px rgba(149, 1, 36, 0.5))",
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
+            />
             <p className="text-foreground/70 mb-6">
               ByteBeasts is an interconnected on-chain universe where players collect, nurture, and evolve digital
               creatures that transcend generations.
@@ -128,7 +164,7 @@ const Footer = () => {
           {/* Link Groups */}
           {linkGroups.map((group) => (
             <motion.div key={group.title} variants={itemVariants}>
-              <h3 className="text-lg font-bold mb-6 text-foreground font-kallisto">{group.title}</h3>
+              <h3 className="text-lg font-bold mb-6 text-foreground font-kallisto neon-glow">{group.title}</h3>
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <motion.li key={link.name} variants={itemVariants} whileHover={{ x: 5 }}>
@@ -202,7 +238,7 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Copyright */}
+        {/* Copyright without shimmer */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}

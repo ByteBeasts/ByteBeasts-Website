@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Button } from "../ui/Button"
 import GamesCarousel from "../ui/GameCarousel"
 import { Game } from "../ui/GameCard"
+import Section from "../ui/Section" 
 
 const games: Game[] = [
   {
@@ -15,18 +16,7 @@ const games: Game[] = [
   },
 ]
 
-// Variants for the main title animation
-const titleAnimation = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.3,
-    }
-  }
-};
-
+// Variants for the animated title letters
 const letterAnimation = {
   hidden: { 
     opacity: 0, 
@@ -52,77 +42,79 @@ export default function Games() {
   const titleText = "Games Launched";
   const titleChars = titleText.split("");
 
+  // Custom title component with special animation
+  const CustomTitle = () => (
+    <motion.div 
+      className="inline-flex justify-center overflow-hidden"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.08,
+            delayChildren: 0.3,
+          }
+        }
+      }}
+    >
+      {titleChars.map((char, index) => (
+        <motion.span
+          key={index}
+          variants={letterAnimation}
+          className={char === " " ? "mr-4 neon-glow" : "neon-glow"}
+          // Apply the pulse effect directly
+          animate={{
+            textShadow: [
+              "0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(149, 1, 36, 0.3), 0 0 20px rgba(149, 1, 36, 0.3)",
+              "0 0 7px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(149, 1, 36, 0.5), 0 0 35px rgba(149, 1, 36, 0.5)",
+              "0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(149, 1, 36, 0.3), 0 0 20px rgba(149, 1, 36, 0.3)"
+            ]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+
   return (
-    <section id="games" className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          {/* Animated main title */}
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-4 inline-flex justify-center overflow-hidden"
-            initial="hidden"
-            animate="visible"
-            variants={titleAnimation}
-          >
-            {titleChars.map((char, index) => (
-              <motion.span
-                key={index}
-                variants={letterAnimation}
-                className={char === " " ? "mr-4 neon-glow" : "neon-glow"}
-                // Apply the pulse effect directly without using variants for this part
-                animate={{
-                  textShadow: [
-                    "0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(149, 1, 36, 0.3), 0 0 20px rgba(149, 1, 36, 0.3)",
-                    "0 0 7px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(149, 1, 36, 0.5), 0 0 35px rgba(149, 1, 36, 0.5)",
-                    "0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(149, 1, 36, 0.3), 0 0 20px rgba(149, 1, 36, 0.3)"
-                  ]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </motion.h2>
+    <Section
+      id="games"
+      customTitle={<CustomTitle />}
+      subtitle="Explore our first release and upcoming titles"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <GamesCarousel games={games} />
+      </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-xl text-foreground/80 max-w-3xl mx-auto"
-          >
-            Explore our first release and upcoming titles
-          </motion.p>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="text-center mt-12"
+      >
+        <p className="text-muted-foreground mb-4">More games coming soon...</p>
+        <Button 
+          variant="outline" 
+          className="border-border text-foreground hover:bg-muted"
+          onClick={() => window.open("#roadmap", "_self")}
         >
-          <GamesCarousel games={games} />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <p className="text-muted-foreground mb-4">More games coming soon...</p>
-          <Button 
-            variant="outline" 
-            className="border-border text-foreground hover:bg-muted"
-            onClick={() => window.open("#roadmap", "_self")}
-          >
-            View Roadmap
-          </Button>
-        </motion.div>
-      </div>
-    </section>
+          View Roadmap
+        </Button>
+      </motion.div>
+    </Section>
   )
 }

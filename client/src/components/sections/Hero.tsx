@@ -3,25 +3,35 @@ import { Button } from "../ui/Button"
 import { ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-
+import Particles, { initParticlesEngine } from "@tsparticles/react"
+import { loadFull } from "tsparticles"
 
 const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    // Inicializa el engine de tsParticles con todos los plugins/presets
+    // Initialize tsParticles engine with all plugins/presets
     initParticlesEngine(async (engine) => {
-      await loadFull(engine);
-    });
+      await loadFull(engine)
+    })
 
-    // Cuando quieras disparar tus animaciones de texto
-    setIsLoaded(true);
-  }, []);
+    // Trigger text animations when loaded
+    setIsLoaded(true)
+  }, [])
 
   return (
     <section className="py-20 md:py-32 relative z-10 overflow-hidden">
+      {/* Enhanced background with blue tone overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#15151c] to-[#0c0c12] opacity-90 z-0"></div>
+      
+      {/* Add subtle radial gradient for depth */}
+      <div 
+        className="absolute inset-0 z-0 opacity-30" 
+        style={{
+          background: "radial-gradient(circle at 50% 30%, rgba(149, 1, 36, 0.2), transparent 70%)"
+        }}
+      ></div>
+
       {/* Animated particle background */}
       <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
         <Particles
@@ -148,10 +158,14 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.5, type: "spring" }}
             className="hidden md:block flex-shrink-0"
           >
-            <img
+            <motion.img
               src="/logos/logoCompleteLight.png"
               alt="ByteBeasts logo"
               className="w-64 max-w-xs lg:w-80 transform -translate-y-12"
+              whileHover={{ 
+                filter: "drop-shadow(0 0 15px rgba(149, 1, 36, 0.5))",
+                transition: { duration: 0.3 }
+              }}
             />
           </motion.div>
         </div>

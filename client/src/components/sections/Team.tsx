@@ -1,7 +1,7 @@
-import { useInView } from "react-intersection-observer"
 import { motion } from "framer-motion"
 import type { TeamMember } from "../../types/types"
 import TeamMemberCard from "../ui/TeamMemberCard"
+import Section from "../ui/Section" 
 
 const teamMembers: TeamMember[] = [
   {
@@ -67,34 +67,37 @@ const teamMembers: TeamMember[] = [
 ]
 
 const Team = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
+  // Enhanced motion variants for the team grid
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
   return (
-    <section id="team" className="py-40 bg-secondary relative">
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-kallisto text-foreground">Meet Our Team</h2>
-          <p className="text-lg text-foreground/80 font-montserrat">
-            The talented individuals behind ByteBeasts, bringing together expertise in gaming and blockchain industries.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          {teamMembers.map((member, index) => (
-            <TeamMemberCard key={member.id} member={member} index={index} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <Section
+      id="team"
+      title="Meet Our Team"
+      subtitle="The talented individuals behind ByteBeasts, bringing together expertise in gaming and blockchain industries."
+      className="py-40" 
+    >
+      {/* Team members grid with staggered animation */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"
+      >
+        {teamMembers.map((member, index) => (
+          <TeamMemberCard key={member.id} member={member} index={index} />
+        ))}
+      </motion.div>
+    </Section>
   )
 }
 

@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Link as LinkIcon, Cpu, Users } from "lucide-react"
 import { gsap } from "gsap"
+import Section from "../ui/Section" // Import the Section component
 
 interface FeatureCardProps {
   icon: React.ReactNode
@@ -83,8 +84,13 @@ const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) 
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-secondary relative">
-      {/* overlay radial rojo suave */}
+    <Section 
+      id="about"
+      title="About ByteBeasts"
+      subtitle="Reimagining gaming through blockchain technology and nostalgic experiences."
+      className="relative"
+    >
+      {/* Custom overlay radial gradient - you can still add custom elements inside the Section */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -93,43 +99,27 @@ export default function About() {
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-kallisto text-foreground">
-            About ByteBeasts
-          </h2>
-          <p className="text-lg font-montserrat text-foreground/80">
-            Reimagining gaming through blockchain technology and nostalgic experiences.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <FeatureCard
-            icon={<LinkIcon size={48} />}
-            title="Interconnected Universe"
-            description="All our games exist in the same universe, allowing for cross-game interactions and shared storylines."
-            delay={0.1}
-          />
-          <FeatureCard
-            icon={<Cpu size={48} />}
-            title="True Ownership"
-            description="Own your in-game assets as NFTs with real-world value and transferability between games."
-            delay={0.2}
-          />
-          <FeatureCard
-            icon={<Users size={48} />}
-            title="Community Driven"
-            description="Our community shapes the future of our games through governance and collaborative development."
-            delay={0.3}
-          />
-        </div>
+      {/* Feature cards grid - main content goes directly inside the Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <FeatureCard
+          icon={<LinkIcon size={48} />}
+          title="Interconnected Universe"
+          description="All our games exist in the same universe, allowing for cross-game interactions and shared storylines."
+          delay={0.1}
+        />
+        <FeatureCard
+          icon={<Cpu size={48} />}
+          title="True Ownership"
+          description="Own your in-game assets as NFTs with real-world value and transferability between games."
+          delay={0.2}
+        />
+        <FeatureCard
+          icon={<Users size={48} />}
+          title="Community Driven"
+          description="Our community shapes the future of our games through governance and collaborative development."
+          delay={0.3}
+        />
       </div>
-    </section>
+    </Section>
   )
 }
