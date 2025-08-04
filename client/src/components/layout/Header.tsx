@@ -110,7 +110,7 @@ const Header = () => {
           
           <Button
             className="relative bg-gradient-to-r from-brand-light to-brand-dark hover:opacity-90 text-white font-kallisto"
-            onClick={() => window.open("https://www.bytebeasts.games", "_blank")}
+            onClick={() => window.open("https://www.bytebeasts.io", "_blank")}
           >
             Play Now
           </Button>

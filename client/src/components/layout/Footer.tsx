@@ -31,15 +31,15 @@ const Footer = () => {
   const linkGroups: FooterLinkGroup[] = [
     {
       title: "Games",
-      links: [{ name: "Tamagotchi", href: "https://www.bytebeasts.games" }],
+      links: [{ name: "Tamagotchi", href: "https://www.bytebeasts.io" }],
     },
     {
       title: "About Us",
       links: [
-        { name: "Product Brief", href: "https://docs.bytebeasts.games/" },
+        { name: "Product Brief", href: "https://docs.bytebeasts.io/" },
         {
           name: "Pitch Deck",
-          href: "https://www.canva.com/design/DAGkdgWPmoE/AePB75_UcjFPCa3y2z-Nrw/edit?utm_content=DAGkdgWPmoE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+          href: "https://docs.google.com/presentation/d/1uk3KEo3D-p9ofOYC3L9nqeHy8WhptBRBg8SI1fO-Re0/edit?usp=sharing",
         },
         {
           name: "Whitepaper",
@@ -221,8 +221,10 @@ const Footer = () => {
               <span>Powered by:</span>
               {[
                 { name: "Starknet", logo: "/logos/StarknetLogo.svg", url: "https://www.starknet.io" },
-                { name: "Cartridge", logo: "/logos/CartridgeLogo.svg", url: "https://cartridge.gg" },
+                { name: "WorldCoin", logo: "/logos/WorldCoinLogo.png", url: "https://world.org/" },
                 { name: "Dojo", logo: "/logos/DojoLogo.svg", url: "https://www.dojoengine.org" },
+                { name: "Cartridge", logo: "/logos/CartridgeLogo.svg", url: "https://cartridge.gg" },
+                { name: "Cavos", logo: "/logos/CavosLogo.png", url: "https://services.cavos.xyz/" },
               ].map((partner, index) => (
                 <motion.a
                   key={partner.name}
