@@ -33,6 +33,12 @@ const partners: Partner[] = [
     description: "Dojo is a full-stack development toolkit designed for building high-performance Starknet games and applications.",
     website: "https://www.dojoengine.org",
   },
+  {
+    name: "Cavos",
+    logo: "/logos/CavosLogo.png",
+    description: "Cavos provides an invisible wallet solution with email and password login, enabling seamless user onboarding and interaction with ByteBeasts.",
+    website: "https://services.cavos.xyz/",
+  },
 ];
 
 const PartnersModal: React.FC<PartnersModalProps> = ({ isOpen, onClose }) => {
@@ -81,7 +87,7 @@ const PartnersModal: React.FC<PartnersModalProps> = ({ isOpen, onClose }) => {
           />
 
           <motion.div
-            className="relative w-full h-full max-h-screen sm:max-w-4xl sm:h-auto rounded-none sm:rounded-2xl overflow-hidden bg-transparent"
+            className="relative w-full h-full max-h-screen sm:max-w-7xl sm:h-auto rounded-none sm:rounded-2xl overflow-hidden bg-transparent"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
@@ -109,7 +115,7 @@ const PartnersModal: React.FC<PartnersModalProps> = ({ isOpen, onClose }) => {
                 Our Partners
               </h2>
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-4 sm:mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 sm:mt-8">
                 {partners.map((partner, i) => (
                   <motion.div
                     key={partner.name}

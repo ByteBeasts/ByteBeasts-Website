@@ -8,10 +8,10 @@ const games: Game[] = [
   {
     id: "tamagotchi",
     title: "ByteBeasts Tamagotchi",
-    description: "Feed, play, and form lasting bonds with your Beast in the original on-chain pet simulation adventure.",
+    description: "The first unique digital pet that cares about you.",
     image: "/games/tamagotchiLogo.png",
-    tags: ["Pet Simulation", "Blockchain", "NFT"],
-    playButton: "https://www.bytebeasts.games",
+    tags: ["Emotional Companionship", "Digital Pets", "Interactive"],
+    playButton: "https://www.bytebeasts.io",
     docsButton: "https://drive.google.com/file/d/1fhAqQlW74tjnotdDqXFI3f4l_-RGl0gy/view?usp=sharing",
   },
 ]

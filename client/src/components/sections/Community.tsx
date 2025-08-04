@@ -77,7 +77,7 @@ const Community = () => {
             <SocialLink
               icon={<SiGithub className="h-6 w-6 text-foreground" />}
               name="GitHub"
-              href="https://github.com/ByteBuildersLabs"
+              href="https://github.com/ByteBeasts"
             />
           </div>
         </motion.div>

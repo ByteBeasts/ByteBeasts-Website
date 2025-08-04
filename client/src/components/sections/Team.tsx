@@ -21,7 +21,7 @@ const teamMembers: TeamMember[] = [
     name: "Marco Araya",
     role: "CPO, Core Dev & Co-Founder",
     image: "/team/marcoPFP.png",
-    specialty: "Backend Engineer",
+    specialty: "Full-Stack Engineer",
     social: {
       twitter: "https://x.com/coxmar_devCR",
       github: "https://github.com/coxmars",
@@ -45,23 +45,11 @@ const teamMembers: TeamMember[] = [
     name: "Rolando Arguello",
     role: "COO, Core Dev & Co-Founder",
     image: "/team/roloPFP.png",
-    specialty: "Integration Manager",
+    specialty: "Full-Stack Engineer",
     social: {
       twitter: "https://x.com/roloxworld",
       github: "https://github.com/RolandoDrRobot",
       linkedin: "https://www.linkedin.com/in/rolando-arguello-531942186/",
-    },
-  },
-  {
-    id: "daniel-villatoro",
-    name: "Daniel Villatoro",
-    role: "Core Dev",
-    image: "/team/villatoroPFP.jpeg",
-    specialty: "Full-Stack Engineer",
-    social: {
-      twitter: "https://x.com/DanielV47204896",
-      github: "https://github.com/DanielVillatoro",
-      linkedin: "https://www.linkedin.com/in/danielvillatoroc/",
     },
   },
 ]
@@ -91,7 +79,7 @@ const Team = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
       >
         {teamMembers.map((member, index) => (
           <TeamMemberCard key={member.id} member={member} index={index} />
